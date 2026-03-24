@@ -1,0 +1,198 @@
+.contactContainer {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contactHero {
+  background-image: url("https://images.ctfassets.net/nnkxuzam4k38/219VUMa1SOxASKqCE2OgT4/be1c810344587bd7f6f203337d23602a/ranger-4df6c1b6.png");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 80px 0 60px;
+  text-align: center;
+}
+
+.contactTitle {
+  font-weight: 700;
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.contactSubtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+
+.contactContent {
+  padding: 80px 0;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.infoTitle {
+  color: #1976d2;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.contactInfoCard {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #1976d2;
+}
+
+.contactInfoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(25, 118, 210, 0.15);
+}
+
+.contactInfoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contactIcon {
+  font-size: 24px;
+  margin-top: 4px;
+}
+
+.contactInfoItem h3 {
+  color: #1976d2;
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.contactInfoItem p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.contactFormSection {
+  width: 100%;
+}
+
+.contactFormPaper {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.1);
+}
+
+.formTitle {
+  color: #1976d2;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.contactForm {
+  width: 100%;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+  color: white;
+  padding: 12px 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+  background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactHero {
+    padding: 60px 0 40px;
+  }
+  
+  .contactTitle {
+    font-size: 2.5rem;
+  }
+  
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contactFormPaper {
+    padding: 24px;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactTitle {
+    font-size: 2rem;
+  }
+  
+  .contactSubtitle {
+    font-size: 1rem;
+  }
+  
+  .contactFormPaper {
+    padding: 20px;
+  }
+  
+  .contactInfoItem {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+}

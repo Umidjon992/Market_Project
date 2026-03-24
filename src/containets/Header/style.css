@@ -1,0 +1,65 @@
+.Head {
+  backdrop-filter: blur(10px);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.Logo .link_logo h1 {
+  font-size: 38px;
+  color: black;
+  position: relative;
+}
+.span{
+  color: #3f3ff0;
+}
+.Logo .link_logo h1::after {
+  content: "";
+  position: absolute;
+  background-color: #3f3ff0;
+  width: 70px;
+  height: 100%;
+  z-index: -1;
+  left: 0;
+  transform: skewX(-20deg);
+}
+.nav {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+.link {
+  color: rgb(74, 74, 220);
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #5d5df7, #3f3ff0);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 2px;
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.link:hover {
+  color: #3f3ff0;
+}
+
+.link:hover::after {
+  width: 100%;
+}
