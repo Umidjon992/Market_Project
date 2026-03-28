@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <section className="home-section">
-        <h1>Welcome to My NasExpress</h1>
+        <h1>Welcome to My FastExpress</h1>
         <p>It is my Favourite thing to sress</p>
       </section>
 

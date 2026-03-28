@@ -20,7 +20,7 @@ const Footer = () => {
         marginTop: "40px",
       }}
     >
-      <h3 style={{ margin: 0, fontWeight: "600" }}>NasExpress</h3>
+      <h3 style={{ margin: 0, fontWeight: "600" }}>FastExpress</h3>
       <p style={{ margin: "5px 0 0", fontSize: "14px", opacity: 0.9 }}>
         © {new Date().getFullYear()} NasExpress. All rights reserved.
       </p>

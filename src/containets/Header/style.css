@@ -19,16 +19,6 @@
 .span{
   color: #3f3ff0;
 }
-.Logo .link_logo h1::after {
-  content: "";
-  position: absolute;
-  background-color: #3f3ff0;
-  width: 70px;
-  height: 100%;
-  z-index: -1;
-  left: 0;
-  transform: skewX(-20deg);
-}
 .nav {
   display: flex;
   gap: 20px;

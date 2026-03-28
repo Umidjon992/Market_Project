@@ -1,17 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import { About, Cart, Contact, Error, Footer, Header, Home, Product, Products } from "./containets";
 import { ToTop } from "./ui";
-import { useState } from "react";
 
 const App = () => {
-  const [dark, setDark] =useState(false)
 
-  const changeTheme = () =>{
-    setDark(!dark)
-  }
   return (
-    <div className={dark ? "dark" : "light"}>
-      <Header changeTheme={changeTheme}/>
+    <div>
+      <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />}/>

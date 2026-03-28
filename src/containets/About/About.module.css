@@ -1,29 +1,145 @@
-* {
-    padding: 0;
-    margin: 0;  
+/* About.module.css */
+
+.hero {
+  position: relative;
+  padding: 80px 0 60px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.heroTag {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heroTag::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: #c9a84c;
+}
+
+.heroTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 16px;
+}
+
+.heroTitle em {
+  font-style: italic;
+  color: #c9a84c;
+}
+
+.heroSub {
+  font-size: 15px;
+  color: #888;
+  font-weight: 300;
 }
 
 .info {
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    margin: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  min-height: 420px;
 }
+
 .left {
-    background-size: cover;
-    width: 100%;
-    max-width: 500px;
-    background-image: url('https://storage.kun.uz/source/11/YbSMiaSM3kHoA9w9GZymojhL8Ojhxoke.jpg');
-    border-radius: 20px;
+  background: #111;
+  border-right: 1px solid #2a2a2a;
+  position: relative;
+  overflow: hidden;
 }
+
+.leftPattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, #1e1e1e 39px, #1e1e1e 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, #1e1e1e 39px, #1e1e1e 40px);
+}
+
+.leftInner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+}
+
+.leftLabel {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c9a84c;
+  margin-bottom: 10px;
+}
+
+.leftStat {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: #f0ece4;
+  line-height: 1;
+}
+
+.leftStatSub {
+  font-size: 13px;
+  color: #555;
+  margin-top: 6px;
+}
+
 .right {
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  padding: 50px 40px 50px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.int {
-    text-align: center;
+.right h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 400;
+  margin: 0 0 6px;
+}
 
+.rule {
+  width: 40px;
+  height: 2px;
+  background: #c9a84c;
+  margin: 16px 0 24px;
+}
+
+.right p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #888;
+  font-weight: 300;
+}
+
+.readBtn {
+  margin-top: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.readBtn:hover {
+  background: #c9a84c;
+  color: #0d0d0d;
 }
