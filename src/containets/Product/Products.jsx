@@ -1,10 +1,4 @@
-import {
-  Button,
-  TextField,
-  InputAdornment,
-  Chip,
-  Stack,
-} from "@mui/material";
+import { Button, TextField, InputAdornment, Chip, Stack } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
@@ -14,10 +8,12 @@ import "./style.css";
 
 const CATEGORIES = [
   { label: "All", value: "All" },
-  { label: "Men's clothing", value: "men's clothing" },
-  { label: "Jewelery", value: "jewelery" },
-  { label: "Electronics", value: "electronics" },
-  { label: "Women's clothing", value: "women's clothing" },
+  { label: "Smartphones", value: "smartphones" },
+  { label: "Laptops", value: "laptops" },
+  { label: "Fragrances", value: "fragrances" },
+  { label: "Skincare", value: "skincare" },
+  { label: "Groceries", value: "groceries" },
+  { label: "Home Decoration", value: "home-decoration" },
 ];
 
 const Products = () => {
@@ -30,10 +26,10 @@ const Products = () => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await fetch("https://fakestoreapi.com/products");
-        const products = await res.json();
-        setData(products);
-        setFilter(products);
+        const res = await fetch("https://dummyjson.com/products");
+        const json = await res.json();
+        setData(json.products);
+        setFilter(json.products);
       } catch (error) {
         console.log(error);
       } finally {
@@ -50,7 +46,7 @@ const Products = () => {
     }
     if (query.trim()) {
       result = result.filter((x) =>
-        x.title.toLowerCase().includes(query.toLowerCase())
+        x.title.toLowerCase().includes(query.toLowerCase()),
       );
     }
     setFilter(result);
@@ -98,7 +94,10 @@ const Products = () => {
             onClick={() => handleCategory(cat.value)}
             variant={activeCategory === cat.value ? "filled" : "outlined"}
             color={activeCategory === cat.value ? "primary" : "default"}
-            sx={{ borderRadius: "999px", fontWeight: activeCategory === cat.value ? 600 : 400 }}
+            sx={{
+              borderRadius: "999px",
+              fontWeight: activeCategory === cat.value ? 600 : 400,
+            }}
           />
         ))}
       </Stack>
@@ -116,16 +115,29 @@ const Products = () => {
               </div>
             ))
         ) : filter.length === 0 ? (
-          <p style={{ textAlign: "center", width: "100%", marginTop: "20px", color: "#888" }}>
+          <p
+            style={{
+              textAlign: "center",
+              width: "100%",
+              marginTop: "20px",
+              color: "#888",
+            }}
+          >
             Product not faund
           </p>
         ) : (
           filter.map((product) => (
             <div key={product.id} className="product-card">
-              <img src={product.image} alt={product.title} />
+              <img src={product.thumbnail} alt={product.title} />
+
               <h3>{product.title.slice(0, 40)}...</h3>
+
               <p>${product.price}</p>
-              <Link to={`/product/${product.id}`} style={{ textDecoration: "none" }}>
+
+              <Link
+                to={`/product/${product.id}`}
+                style={{ textDecoration: "none" }}
+              >
                 <Button variant="contained" size="small" fullWidth>
                   Buy now
                 </Button>

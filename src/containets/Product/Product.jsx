@@ -30,7 +30,7 @@ const Product = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await fetch(`https://fakestoreapi.com/products/${id}`);
+        const res = await fetch(`https://dummyjson.com/products/${id}`);
         const data = await res.json();
         setProduct(data);
       } catch (e) {
@@ -81,30 +81,27 @@ const Product = () => {
 
       {loading ? (
         <div className="product-details">
-    <div className="details-left">
-      <Skeleton height={350} width={350} />
-    </div>
+          <div className="details-left">
+            <Skeleton height={350} width={350} />
+          </div>
 
-    <div className="details-right">
-      <Skeleton height={40} width="80%" style={{ marginBottom: 15 }} />
-      <Skeleton height={30} width="30%" style={{ marginBottom: 10 }} />
-      <Skeleton height={20} width="40%" style={{ marginBottom: 20 }} />
-      <Skeleton
-        height={15}
-        count={6}
-        style={{ marginBottom: 8 }}
-      />
-      <div style={{ display: "flex", gap: "15px", marginTop: "25px" }}>
-        <Skeleton height={40} width={150} />
-        <Skeleton height={40} width={150} />
-      </div>
-    </div>
-  </div>
+          <div className="details-right">
+            <Skeleton height={40} width="80%" style={{ marginBottom: 15 }} />
+            <Skeleton height={30} width="30%" style={{ marginBottom: 10 }} />
+            <Skeleton height={20} width="40%" style={{ marginBottom: 20 }} />
+            <Skeleton height={15} count={6} style={{ marginBottom: 8 }} />
+            <div style={{ display: "flex", gap: "15px", marginTop: "25px" }}>
+              <Skeleton height={40} width={150} />
+              <Skeleton height={40} width={150} />
+            </div>
+          </div>
+        </div>
       ) : (
         <div className="product-details">
           <div className="details-left">
-            <img src={product.image} alt={product.title} />
+            <img src={product.thumbnail} alt={product.title} />
           </div>
+
           <div className="details-right">
             <h2>{product.title}</h2>
             <h3 className="price">${product.price}</h3>
@@ -142,5 +139,5 @@ const Product = () => {
     </div>
   );
 };
- 
+
 export default Product;

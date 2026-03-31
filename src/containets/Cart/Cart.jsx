@@ -84,13 +84,13 @@ const Cart = () => {
         </div>
       ) : (
         <div className="cart-wrapper">
-        {" "}
+          {" "}
           <div className="cart-left">
             {cart.map((item) => (
               <div className="cart-item" key={item.id}>
                 {" "}
                 <img
-                  src={item.image}
+                  src={item.thumbnail}
                   alt={item.title}
                   className="cart-img"
                 />{" "}
