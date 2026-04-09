@@ -2,6 +2,7 @@ import React from "react";
 import { Button, ButtonGroup } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./style.css";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const navLinks = [
   { name: "Home", to: "/" },
@@ -10,9 +11,15 @@ const navLinks = [
   { name: "Contact", to: "/contact" },
 ];
 
-const Header = ({ changeTheme }) => {
+const Header = () => {
+  const { scrollY } = useScroll();
+
+  const width = useTransform(scrollY, [0, 100], ["100%", "90%"]);
+  const borderRadius = useTransform(scrollY, [0, 100], ["0px", "50px"]);
+  const top = useTransform(scrollY, [0, 100], [0, 10]);
+  
   return (
-    <header className="Head">
+    <motion.header style={{ width, top, borderRadius }} className="Head">
       <div className="Logo">
         <Link
           to={"/"}
@@ -111,7 +118,7 @@ const Header = ({ changeTheme }) => {
           </Link>
         </ButtonGroup>
       </div>
-    </header>
+    </motion.header>
   );
 };
 

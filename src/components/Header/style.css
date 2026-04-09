@@ -4,19 +4,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+  box-shadow:
+    rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   padding: 10px 20px;
   position: fixed;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 100;
+  box-sizing: border-box;
 }
 .Logo .link_logo h1 {
   font-size: 38px;
   color: black;
   position: relative;
 }
-.span{
+.span {
   color: #3f3ff0;
 }
 .nav {
