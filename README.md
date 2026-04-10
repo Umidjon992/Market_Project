@@ -24,8 +24,9 @@ Welcome to the **Market Project**, a modern, fast, and responsive e-commerce sol
 | Technology | Purpose |
 | :--- | :--- |
 | **React / Next.js** | Core Framework |
-| **motion Motion** | Smooth Animations |
+| **Motion** | Smooth Animations |
 | **Vercel** | Fast Deployment |
+| **MUI** | UI Componets |
 
 ---
 
