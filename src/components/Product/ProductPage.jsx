@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams, NavLink } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import "./style.css";
+import styles from "./Product.module.css";
 import { Button, ButtonGroup, Snackbar, Alert } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../redux/actions";
@@ -46,21 +46,9 @@ const Product = () => {
   }, [id]);
 
   return (
-    <div className="container">
-      <Link
-        to={"/product"}
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "10px",
-          margin: "20px",
-          textDecoration: "none",
-          position: "relative",
-        }}
-        className="link_product"
-      >
+    <div className={styles.container}>
+      <Link to={"/product"} className={styles.linkProduct}>
         <svg
-          className="w-6 h-6 text-gray-800 dark:text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -80,12 +68,12 @@ const Product = () => {
       </Link>
 
       {loading ? (
-        <div className="product-details">
-          <div className="details-left">
+        <div className={styles.productDetails}>
+          <div>
             <Skeleton height={350} width={350} />
           </div>
 
-          <div className="details-right">
+          <div className={styles.detailsRight}>
             <Skeleton height={40} width="80%" style={{ marginBottom: 15 }} />
             <Skeleton height={30} width="30%" style={{ marginBottom: 10 }} />
             <Skeleton height={20} width="40%" style={{ marginBottom: 20 }} />
@@ -97,24 +85,28 @@ const Product = () => {
           </div>
         </div>
       ) : (
-        <div className="product-details">
-          <div className="details-left">
-            <img src={product.thumbnail} alt={product.title} />
+        <div className={styles.productDetails}>
+          <div>
+            <img
+              className={styles.detailsLeftImg}
+              src={product.thumbnail}
+              alt={product.title}
+            />
           </div>
 
-          <div className="details-right">
+          <div className={styles.detailsRight}>
             <h2>{product.title}</h2>
-            <h3 className="price">${product.price}</h3>
-            <p className="category">Category: {product.category}</p>
-            <p className="description">{product.description}</p>
+            <h3 className={styles.price}>${product.price}</h3>
+            <p className={styles.category}>Category: {product.category}</p>
+            <p className={styles.description}>{product.description}</p>
 
             <ButtonGroup variant="outlined" sx={{ mt: "20px" }}>
-              <Button onClick={addProduct} className="add-cart-btn">
+              <Button onClick={addProduct} className={styles.addCartBtn}>
                 Add to Cart
               </Button>
 
               <NavLink to="/cart">
-                <Button className="add-cart-btn">Go to Cart</Button>
+                <Button className={styles.addCartBtn}>Go to Cart</Button>
               </NavLink>
             </ButtonGroup>
           </div>

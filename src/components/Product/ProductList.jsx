@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { Link } from "react-router-dom";
-import "./style.css";
+import styles from "./Product.module.css";
 
 const CATEGORIES = [
   { label: "All", value: "All" },
@@ -16,7 +16,7 @@ const CATEGORIES = [
   { label: "Home Decoration", value: "home-decoration" },
 ];
 
-const Products = () => {
+const ProductList = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -46,7 +46,7 @@ const Products = () => {
     }
     if (query.trim()) {
       result = result.filter((x) =>
-        x.title.toLowerCase().includes(query.toLowerCase()),
+        x.title.toLowerCase().includes(query.toLowerCase())
       );
     }
     setFilter(result);
@@ -64,7 +64,7 @@ const Products = () => {
   };
 
   return (
-    <div className="container" style={{ paddingTop: "100px" }}>
+    <div className={styles.container}>
       <h1>Latest Products</h1>
 
       {/* MUI Search */}
@@ -102,12 +102,12 @@ const Products = () => {
         ))}
       </Stack>
 
-      <div className="products">
+      <div className={styles.products}>
         {loading ? (
           Array(10)
             .fill()
             .map((_, i) => (
-              <div key={i} className="product-card">
+              <div key={i} className={styles.productCard}>
                 <Skeleton height={180} />
                 <Skeleton height={20} style={{ marginTop: 10 }} />
                 <Skeleton height={20} width={80} />
@@ -115,20 +115,15 @@ const Products = () => {
               </div>
             ))
         ) : filter.length === 0 ? (
-          <p
-            style={{
-              textAlign: "center",
-              width: "100%",
-              marginTop: "20px",
-              color: "#888",
-            }}
-          >
-            Product not faund
-          </p>
+          <p className={styles.notFound}>Product not found</p>
         ) : (
           filter.map((product) => (
-            <div key={product.id} className="product-card">
-              <img src={product.thumbnail} alt={product.title} />
+            <div key={product.id} className={styles.productCard}>
+              <img
+                className={styles.productCardImg}
+                src={product.thumbnail}
+                alt={product.title}
+              />
 
               <h3>{product.title.slice(0, 40)}...</h3>
 
@@ -150,4 +145,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ProductList;

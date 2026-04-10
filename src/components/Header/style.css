@@ -1,5 +1,5 @@
 .Head {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@
   position: relative;
 }
 .span {
-  color: #3f3ff0;
+  color: #000;
 }
 .nav {
   display: flex;
