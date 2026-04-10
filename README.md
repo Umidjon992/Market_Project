@@ -43,7 +43,7 @@ To run this project locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/Umidjon992/market-project.git](https://github.com/Umidjon992/Market_Project.git)
+    git clone https://github.com/Umidjon992/Market_Project.git
     ```
 2.  **Navigate into the directory:**
     ```bash
