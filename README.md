@@ -84,7 +84,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 ### 📩 Contact
-**Your Name** - [@your_telegram](https://t.me/your_username) - email@example.com
+**Your Name** - [@your_telegram](https://t.me/bandainlol) - umidjontorayev59@gmail.com
 
 Project Link: [https://market-project-eta.vercel.app/](https://market-project-eta.vercel.app/)
 
