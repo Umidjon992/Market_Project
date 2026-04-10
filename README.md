@@ -47,7 +47,7 @@ To run this project locally, follow these steps:
     ```
 2.  **Navigate into the directory:**
     ```bash
-    cd market-project
+    cd Market-Project
     ```
 3.  **Install dependencies:**
     ```bash
